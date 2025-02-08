@@ -1,4 +1,4 @@
-FROM docker:27.5.1-dind-alpine3.21
+FROM docker:27.5.1-alpine3.21
 
 
 #
