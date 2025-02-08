@@ -61,7 +61,7 @@ jobs:
               ghcr.io/${{ github.repository }}:latest
     permissions:
       packages: write
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
