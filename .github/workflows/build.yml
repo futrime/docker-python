@@ -74,5 +74,5 @@ jobs:
       - uses: docker/build-push-action@v5
         with:
           context: ${{ matrix.context }}
-          push: ${{ github.event_name != 'pull_request' }}
+          push: ${{ github.event_name == 'workflow_dispatch' }}
           tags: ${{ matrix.tags }}
