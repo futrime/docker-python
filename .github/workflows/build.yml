@@ -1,0 +1,62 @@
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
+
+env:
+  REGISTRY: ghcr.io
+  NAMESPACE: futrime
+  IMAGE_NAME: ${{ github.event.repository.name }}
+
+jobs:
+  publish-docker-images:
+    strategy:
+      fail-fast: false
+      matrix:
+        docker:
+          - 27.5.1
+        python:
+          - py3.11.11
+        os:
+          - alpine3.21
+        include:
+          - docker: 27.5.1
+            python: py3.11.11
+            os: alpine3.21
+            latest: true
+          - latest: false
+    permissions:
+      packages: write
+    runs-on: ubuntu
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: docker/build-push-action@v5
+        with:
+          context: ${{ matrix.docker }}/${{ matrix.python }}/${{ matrix.os }}
+          push: true
+          tags: |
+            ${{ env.REGISTRY }}/${{ env.NAMESPACE }}/${{ env.IMAGE_NAME }}:${{ matrix.docker }}-${{ matrix.python }}-${{ matrix.os }}
+
+      - if: ${{ matrix.latest }}
+        uses: docker/build-push-action@v5
+        with:
+          context: ${{ matrix.docker }}/${{ matrix.python }}/${{ matrix.os }}
+          push: true
+          tags: |
+            ${{ env.REGISTRY }}/${{ env.NAMESPACE }}/${{ env.IMAGE_NAME }}:${{ matrix.docker }}-${{ matrix.python }}-${{ matrix.os }}
+            ${{ env.REGISTRY }}/${{ env.NAMESPACE }}/${{ env.IMAGE_NAME }}:latest
+
+      - if: ${{ !matrix.latest }}
+        uses: docker/build-push-action@v5
+        with:
+          context: ${{ matrix.docker }}/${{ matrix.python }}/${{ matrix.os }}
+          push: true
+          tags: |
+            ${{ env.REGISTRY }}/${{ env.NAMESPACE }}/${{ env.IMAGE_NAME }}:${{ matrix.docker }}-${{ matrix.python }}-${{ matrix.os }}

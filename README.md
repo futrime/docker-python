@@ -2,11 +2,15 @@
 
 Docker in Docker with Python
 
-This image is a combination of [docker](https://hub.docker.com/_/docker) and [python](https://hub.docker.com/_/python). Visit [this Docker Hub page](https://hub.docker.com/r/futrime/docker-python) for more information.
+This image is [python](https://hub.docker.com/_/python) built upon [docker](https://hub.docker.com/_/docker).
 
-## Supported tags and respective `Dockerfile` links
+## Tags
 
-- [`27.4-dind-py3.11-alpine3.21`, `latest`](27.4-dind/py3.11/Dockerfile)
+- [`27.5.1-py3.11.11-alpine3.21`](27.5.1/py3.11.11/alpine3.21/Dockerfile)
+
+## Thanks
+
+- [docker-library/python](https://github.com/docker-library/python): [MIT License](https://github.com/docker-library/python/blob/master/LICENSE)
 
 ## Contributing
 

@@ -1,10 +1,13 @@
+FROM docker:27.5.1-dind-alpine3.21
+
+
 #
 # NOTE: THIS DOCKERFILE IS GENERATED VIA "apply-templates.sh"
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #
 
-FROM docker:27.4-dind
+# FROM alpine:3.21
 
 # ensure local python is preferred over distribution python
 ENV PATH /usr/local/bin:$PATH
@@ -137,4 +140,8 @@ RUN set -eux; \
 		ln -svT "$src" "/usr/local/bin/$dst"; \
 	done
 
-CMD ["python3"]
+# CMD ["python3"]
+
+
+COPY entrypoint.sh /usr/local/bin/
+CMD ["entrypoint.sh"]
