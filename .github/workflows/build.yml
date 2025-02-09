@@ -11,54 +11,24 @@ jobs:
         include:
           - context: 27/py3.11
             tags: |
-              ghcr.io/${{ github.repository }}:27.5-py3.11-alpine3.21
-              ghcr.io/${{ github.repository }}:27.5-py3.11-alpine
               ghcr.io/${{ github.repository }}:27.5-py3.11
-              ghcr.io/${{ github.repository }}:27-py3.11-alpine3.21
-              ghcr.io/${{ github.repository }}:27-py3.11-alpine
               ghcr.io/${{ github.repository }}:27-py3.11
-              ghcr.io/${{ github.repository }}:py3.11-alpine3.21
-              ghcr.io/${{ github.repository }}:py3.11-alpine
               ghcr.io/${{ github.repository }}:py3.11
           - context: 27/py3.12
             tags: |
-              ghcr.io/${{ github.repository }}:27.5-py3.12-alpine3.21
-              ghcr.io/${{ github.repository }}:27.5-py3.12-alpine
               ghcr.io/${{ github.repository }}:27.5-py3.12
-              ghcr.io/${{ github.repository }}:27-py3.12-alpine3.21
-              ghcr.io/${{ github.repository }}:27-py3.12-alpine
               ghcr.io/${{ github.repository }}:27-py3.12
-              ghcr.io/${{ github.repository }}:py3.12-alpine3.21
-              ghcr.io/${{ github.repository }}:py3.12-alpine
               ghcr.io/${{ github.repository }}:py3.12
           - context: 27/py3.13
             tags: |
-              ghcr.io/${{ github.repository }}:27.5-py3.13-alpine3.21
-              ghcr.io/${{ github.repository }}:27.5-py3.13-alpine
               ghcr.io/${{ github.repository }}:27.5-py3.13
-              ghcr.io/${{ github.repository }}:27.5-py3-alpine3.21
-              ghcr.io/${{ github.repository }}:27.5-py3-alpine
               ghcr.io/${{ github.repository }}:27.5-py3
-              ghcr.io/${{ github.repository }}:27.5-alpine3.21
-              ghcr.io/${{ github.repository }}:27.5-alpine
               ghcr.io/${{ github.repository }}:27.5
-              ghcr.io/${{ github.repository }}:27-py3.13-alpine3.21
-              ghcr.io/${{ github.repository }}:27-py3.13-alpine
               ghcr.io/${{ github.repository }}:27-py3.13
-              ghcr.io/${{ github.repository }}:27-py3-alpine3.21
-              ghcr.io/${{ github.repository }}:27-py3-alpine
               ghcr.io/${{ github.repository }}:27-py3
-              ghcr.io/${{ github.repository }}:27-alpine3.21
-              ghcr.io/${{ github.repository }}:27-alpine
               ghcr.io/${{ github.repository }}:27
-              ghcr.io/${{ github.repository }}:py3.13-alpine3.21
-              ghcr.io/${{ github.repository }}:py3.13-alpine
               ghcr.io/${{ github.repository }}:py3.13
-              ghcr.io/${{ github.repository }}:py3-alpine3.21
-              ghcr.io/${{ github.repository }}:py3-alpine
               ghcr.io/${{ github.repository }}:py3
-              ghcr.io/${{ github.repository }}:alpine3.21
-              ghcr.io/${{ github.repository }}:alpine
               ghcr.io/${{ github.repository }}:latest
     permissions:
       packages: write
