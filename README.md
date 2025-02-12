@@ -9,7 +9,7 @@ This image is [python](https://hub.docker.com/_/python) built upon [docker](http
 This image is available on GitHub Container Registry.
 
 ```sh
-docker pull ghcr.io/futrime/python:latest
+docker pull ghcr.io/futrime/docker-python:latest
 ```
 
 ## Tags
