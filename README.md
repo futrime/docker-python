@@ -4,6 +4,14 @@ Docker in Docker with Python
 
 This image is [python](https://hub.docker.com/_/python) built upon [docker](https://hub.docker.com/_/docker).
 
+## Usage
+
+This image is available on GitHub Container Registry.
+
+```sh
+docker pull ghcr.io/futrime/python:latest
+```
+
 ## Tags
 
 - [`27.5-py3.11`, `27-py3.11`, `py3.11`](27/py3.11/Dockerfile)
