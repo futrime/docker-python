@@ -12,6 +12,16 @@ This image is available on GitHub Container Registry.
 docker pull ghcr.io/futrime/docker-python:latest
 ```
 
+If you are create image from this image, remember to run `dockerd-entrypoint.sh` in the background before running any Python script that uses Docker. Here is an example of entrypoint script (assume the Python script is named `script.py`):
+
+```sh
+#!/bin/sh
+
+dockerd-entrypoint.sh &
+
+python script.py
+```
+
 ## Tags
 
 - [`27.5-py3.11`, `27-py3.11`, `py3.11`](27/py3.11/Dockerfile)
